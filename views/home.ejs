@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <%- include('partials/head.ejs') %>
+    <title>Home</title>
 </head>
 <body>
     <%- include('partials/navbar.ejs') %>
     
-
+    <%= JSON.stringify(blog) %>
 
     <%- include('partials/scripts.ejs') %>
 </body>
