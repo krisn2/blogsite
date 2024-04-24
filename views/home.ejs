@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('partials/head.ejs') %>
     <title>Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('partials/navbar.ejs') %>
-    
-    <%= JSON.stringify(blog) %>
+
+    <div class="container mt-3">
+      <div class="row row-cols-3">
+        <% blog.forEach(blog => { %>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img src="<%= blog.coverImageUrl %>" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
 
     <%- include('partials/scripts.ejs') %>
-</body>
+  </body>
 </html>
